@@ -1,30 +1,31 @@
+#include "inc/functionMapping.h"
 #include <stdio.h>
-#include <string.h>
-
-#define MAX_COMMAND_LENGTH 1 // Maximum length of the command (algorithm name)
 
 int main() {
-    char command[MAX_COMMAND_LENGTH]; // Array to store the command (algorithm name)
-  
-    // Print the list of available algorithms
-    printf("The following algorithms can be selected:\n",
-              "Quick Sort\n",
-              "Dijkstra's Algorithm\n",
-              "Prim's Algorithm\n",
-              "Knapsack Problem\n",
-              "Fast Fourier Transform (FFT)\n"
-      );
-  
-    printf("Enter the name of the algorithm which you want to run:");
-    
-    // Read the user's input (algorithm name) and store it in the 'command' variable
-    fgets(command, sizeof(command), stdin);
-    
-    // Remove the newline character at the end of the input
-    command[strcspn(command, "\n")] = '\0'; 
+  // Local Variable decleration 
+  int userInput;
 
-    // Print the selected algorithm
-    printf("The following algorithm has been selected: %s\n", command);
+  initializeFunctionTable();
+
+  // Print the list of available algorithms
+  printf("The following algorithms can be selected:\n"
+          "1. Quick Sort\n"
+          "2. Dijkstra's Algorithm\n"
+          "3. Prim's Algorithm\n"
+          "4. Knapsack Problem\n"
+          "5. Fast Fourier Transform (FFT)\n\n"
+  );
   
-    return 0;
+  printf("Enter the number associated with the algorithm which you want to run:");
+  
+  scanf("%d", &userInput);
+
+  const char* functionName = getFunctionName(userInput);
+  
+  // Print the selected algorithm
+  printf("The following algorithm has been selected: %s\n", functionName);
+
+  executeFunction(userInput);
+  
+  return 0;
 }

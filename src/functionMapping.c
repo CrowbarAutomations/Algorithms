@@ -1,0 +1,86 @@
+#include "inc/functionMapping.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+// Hash table size
+#define FUNCTION_TABLE_SIZE 5
+
+// Hash table array
+HashEntry functionTable[FUNCTION_TABLE_SIZE];
+
+// Hash function
+unsigned int hash(int input) {
+    return (input - 1) % FUNCTION_TABLE_SIZE;
+}
+
+// Quick Sort Algorithm Function
+void quickSortAlgorithm() {
+    printf("Executing Quick Sort Algorithm\n");
+}
+
+// Dijkstra's Algorithm Function
+void dijkstrasAlgorithm() {
+    printf("Executing Dijkstra's Algorithm\n");
+}
+
+// Prim's Algorithm Function
+void primsAlgorithm() {
+    printf("Executing Prim's Algorithm\n");
+}
+
+// Knapsack Problem Algorithm Function
+void knapsackProblemAlgorithm() {
+    printf("Executing Knapsack Problem Algorithm\n");
+}
+
+// Fast Fourier Transform (FFT) Algorithm Function
+void fastFourierTransformAlgorithm() {
+    printf("Executing Fast Fourier Transform (FFT) Algorithm\n");
+}
+
+// Initialize the hash table
+void initializeFunctionTable() {
+    memset(functionTable, 0, sizeof(HashEntry) * FUNCTION_TABLE_SIZE);
+
+    // Add Algorithm function to user input mappings
+    functionTable[hash(1)].input = 1;
+    strcpy(functionTable[hash(1)].functionName, "Quick Sort Algorithm");
+    functionTable[hash(1)].function = &quickSortAlgorithm;
+
+    functionTable[hash(2)].input = 2;
+    strcpy(functionTable[hash(2)].functionName, "Dijkstra's Algorithm");
+    functionTable[hash(2)].function = &dijkstrasAlgorithm;
+
+    functionTable[hash(3)].input = 3;
+    strcpy(functionTable[hash(3)].functionName, "Prim's Algorithm");
+    functionTable[hash(3)].function = &primsAlgorithm;
+
+    functionTable[hash(4)].input = 4;
+    strcpy(functionTable[hash(4)].functionName, "Knapsack Problem Algorithm");
+    functionTable[hash(4)].function = &knapsackProblemAlgorithm;
+
+    functionTable[hash(5)].input = 5;
+    strcpy(functionTable[hash(5)].functionName, "Fast Fourier Transform (FFT) Algorithm");
+    functionTable[hash(5)].function = &fastFourierTransformAlgorithm;
+}
+
+// Execute the function based on user input
+void executeFunction(int input) {
+    unsigned int index = hash(input);
+    if (functionTable[index].input == input) {
+        functionTable[index].function();
+    } else {
+        printf("No matching function found for input '%d'\n", input);
+    }
+}
+
+// Get the function name based on user input
+const char* getFunctionName(int input) {
+    unsigned int index = hash(input);
+    if (functionTable[index].input == input) {
+        return functionTable[index].functionName;
+    } else {
+        return "No matching function";
+    }
+}
