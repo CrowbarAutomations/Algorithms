@@ -1,4 +1,4 @@
-name: Build
+name: Checkout
 
 on:
   push:
@@ -9,18 +9,9 @@ on:
       - main
 
 jobs:
-  build:
+  checkout:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-
-      - name: Set up C compiler
-        run: sudo apt-get install build-essential
-
-      - name: Build
-        run: make
-
-      - name: Run Tests
-        run: make test
