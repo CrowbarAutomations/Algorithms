@@ -47,16 +47,19 @@ clean:
 # Target for running tests
 test:
 	@echo "Running tests..."
+	# Add commands to run tests
 
 # Target for running tools
 tools:
 	@echo "Running tools..."
+	# Add commands to run tools
 
 # Target for running configuration
 config:
 	@echo "Running configuration..."
+	# Add commands for running configuration
 
 # Target for generating documentation
 docs:
 	@echo "Generating documentation..."
-	# Add commands to generate documentation in the doc folder
+	# Add commands for generating documentation
