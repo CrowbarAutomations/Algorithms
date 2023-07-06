@@ -1,0 +1,25 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Run Algorithm Program",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/bin/main.exe",
+        "args": [],
+        "stopAtEntry": false,
+        "cwd": "${workspaceFolder}",
+        "environment": [],
+        "externalConsole": true,
+        "windows": {
+          "program": "${workspaceFolder}/bin/main.exe"
+        },
+        "pipeTransport": {
+          "debuggerPath": "/usr/bin/gdb"
+        },
+        "sourceFileMap": {
+          "/mnt/c": "C:/"
+        }
+      }
+    ]
+  }  

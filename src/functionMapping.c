@@ -41,6 +41,7 @@ void fastFourierTransformAlgorithm() {
 
 // Initialize the hash table
 void initializeFunctionTable() {
+    // Clear the function table
     memset(functionTable, 0, sizeof(HashEntry) * FUNCTION_TABLE_SIZE);
 
     // Add Algorithm function to user input mappings
@@ -67,8 +68,12 @@ void initializeFunctionTable() {
 
 // Execute the function based on user input
 void executeFunction(int input) {
+    // Calculate the hash index
     unsigned int index = hash(input);
+
+    // Check if the function exists for the given input
     if (functionTable[index].input == input) {
+        // Execute the corresponding algorithm function
         functionTable[index].function();
     } else {
         printf("No matching function found for input '%d'\n", input);
@@ -77,8 +82,12 @@ void executeFunction(int input) {
 
 // Get the function name based on user input
 const char* getFunctionName(int input) {
+    // Calculate the hash index
     unsigned int index = hash(input);
+
+    // Check if the function exists for the given input
     if (functionTable[index].input == input) {
+        // Return the name of the corresponding algorithm
         return functionTable[index].functionName;
     } else {
         return "No matching function";

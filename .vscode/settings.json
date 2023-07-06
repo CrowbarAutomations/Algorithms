@@ -1,0 +1,22 @@
+{
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.wordWrap": "off",
+    "editor.autoIndent": "full",
+    "editor.formatOnSave": true,
+    "files.exclude": {
+      ".build": true
+    },
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "c-cpp-flylint.enable": true,
+    "c-cpp-flylint.clang": {
+      "command": "clang",
+      "standard": "c11",
+      "warnings": [
+        "-Wall",
+        "-Wextra"
+      ]
+    }
+  }
+  
