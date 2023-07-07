@@ -1,7 +1,4 @@
 #include "inc/functionMapping.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 // Hash table size
 #define FUNCTION_TABLE_SIZE 5
@@ -10,37 +7,44 @@
 HashEntry functionTable[FUNCTION_TABLE_SIZE];
 
 // Hash function
-unsigned int hash(int input) {
+unsigned int hash(int input)
+{
     return (input - 1) % FUNCTION_TABLE_SIZE;
 }
 
 // Quick Sort Algorithm Function
-void quickSortAlgorithm() {
+void quickSortAlgorithm()
+{
     printf("Executing Quick Sort Algorithm\n");
 }
 
 // Dijkstra's Algorithm Function
-void dijkstrasAlgorithm() {
+void dijkstrasAlgorithm()
+{
     printf("Executing Dijkstra's Algorithm\n");
 }
 
 // Prim's Algorithm Function
-void primsAlgorithm() {
+void primsAlgorithm()
+{
     printf("Executing Prim's Algorithm\n");
 }
 
 // Knapsack Problem Algorithm Function
-void knapsackProblemAlgorithm() {
+void knapsackProblemAlgorithm()
+{
     printf("Executing Knapsack Problem Algorithm\n");
 }
 
 // Fast Fourier Transform (FFT) Algorithm Function
-void fastFourierTransformAlgorithm() {
+void fastFourierTransformAlgorithm()
+{
     printf("Executing Fast Fourier Transform (FFT) Algorithm\n");
 }
 
 // Initialize the hash table
-void initializeFunctionTable() {
+void initializeFunctionTable()
+{
     // Clear the function table
     memset(functionTable, 0, sizeof(HashEntry) * FUNCTION_TABLE_SIZE);
 
@@ -67,29 +71,37 @@ void initializeFunctionTable() {
 }
 
 // Execute the function based on user input
-void executeFunction(int input) {
+void executeAlgorithm(int input)
+{
     // Calculate the hash index
     unsigned int index = hash(input);
 
     // Check if the function exists for the given input
-    if (functionTable[index].input == input) {
+    if (functionTable[index].input == input)
+    {
         // Execute the corresponding algorithm function
         functionTable[index].function();
-    } else {
+    }
+    else
+    {
         printf("No matching function found for input '%d'\n", input);
     }
 }
 
 // Get the function name based on user input
-const char* getFunctionName(int input) {
+const char *getFunctionName(int input)
+{
     // Calculate the hash index
     unsigned int index = hash(input);
 
     // Check if the function exists for the given input
-    if (functionTable[index].input == input) {
+    if (functionTable[index].input == input)
+    {
         // Return the name of the corresponding algorithm
         return functionTable[index].functionName;
-    } else {
+    }
+    else
+    {
         return "No matching function";
     }
 }
