@@ -1,0 +1,6 @@
+#ifndef KNAPSACKPROBLEM_ALGORITHM_H
+#define KNAPSACKPROBLEM_ALGORITHM_H
+
+void knapsackProblemAlgorithm();
+
+#endif /* KNAPSACKPROBLEM_ALGORITHM_H */

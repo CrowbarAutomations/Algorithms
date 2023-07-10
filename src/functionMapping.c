@@ -12,36 +12,6 @@ unsigned int hash(int input)
     return (input - 1) % FUNCTION_TABLE_SIZE;
 }
 
-// Quick Sort Algorithm Function
-void quickSortAlgorithm()
-{
-    printf("Executing Quick Sort Algorithm\n");
-}
-
-// Dijkstra's Algorithm Function
-void dijkstrasAlgorithm()
-{
-    printf("Executing Dijkstra's Algorithm\n");
-}
-
-// Prim's Algorithm Function
-void primsAlgorithm()
-{
-    printf("Executing Prim's Algorithm\n");
-}
-
-// Knapsack Problem Algorithm Function
-void knapsackProblemAlgorithm()
-{
-    printf("Executing Knapsack Problem Algorithm\n");
-}
-
-// Fast Fourier Transform (FFT) Algorithm Function
-void fastFourierTransformAlgorithm()
-{
-    printf("Executing Fast Fourier Transform (FFT) Algorithm\n");
-}
-
 // Initialize the hash table
 void initializeFunctionTable()
 {

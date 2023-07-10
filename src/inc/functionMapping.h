@@ -1,6 +1,12 @@
 #ifndef FUNCTION_MAPPING_H
 #define FUNCTION_MAPPING_H
 
+#include "quickSortAlgorithm.h"
+#include "dijkstrasAlgorithm.h"
+#include "primsAlgorithm.h"
+#include "knapsackProblemAlgorithm.h"
+#include "fastFourierTransformAlgorithm.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
