@@ -1,7 +1,7 @@
 #include "dijkstrasAlgorithm.h"
 
 // Function to create the adjacency matrix from the data array
-static void createAdjacencyMatrix(float values[], int numVertices, int adjacencyMatrix[][MAX_VERTICES])
+void createAdjacencyMatrix(float values[], int numVertices, int adjacencyMatrix[][MAX_VERTICES])
 {
   int currentIndex = 0;
 
@@ -23,7 +23,7 @@ static void createAdjacencyMatrix(float values[], int numVertices, int adjacency
 }
 
 // Function to apply Dijkstra's Algorithm
-static void applyDijkstra(int adjacencyMatrix[][MAX_VERTICES], int numVertices, int sourceVertex, int distances[], int visited[])
+void applyDijkstra(int adjacencyMatrix[][MAX_VERTICES], int numVertices, int sourceVertex, int distances[], int visited[])
 {
   // Initialize the distances and visited arrays
   for (int i = 0; i < numVertices; i++)
@@ -67,7 +67,7 @@ static void applyDijkstra(int adjacencyMatrix[][MAX_VERTICES], int numVertices, 
 }
 
 // Function to print the shortest path distances from the source vertex
-static void printShortestPathDistances(int distances[], int numVertices, int sourceVertex)
+void printShortestPathDistances(int distances[], int numVertices, int sourceVertex)
 {
   printf("Shortest Path Distances from Source Vertex %d:\n", sourceVertex);
   for (int i = 0; i < numVertices; i++)
