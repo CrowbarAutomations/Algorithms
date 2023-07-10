@@ -10,16 +10,16 @@
 
 #define MAX_VERTICES 100
 
-// Function prototype for Prim's Algorithm
-void primsAlgorithm(FileData *data);
-
 // Utility function to find the vertex with the minimum key value
 int minKey(int key[], bool mstSet[], int numVertices);
 
-// Utility function to print the selected edges of the minimum spanning tree
-void printMST(int graph[][MAX_VERTICES], int numVertices);
-
 // Function to find the minimum spanning tree using Prim's Algorithm
 int primMST(int graph[][MAX_VERTICES], int numVertices);
+
+// Utility function to print the selected edges of the minimum spanning tree
+void printMST(int graph[][MAX_VERTICES], int parent[], int numVertices);
+
+// Function prototype for Prim's Algorithm
+void primsAlgorithm(FileData *data);
 
 #endif /* PRIMS_ALGORITHM_H */

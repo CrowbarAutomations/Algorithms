@@ -2,54 +2,6 @@
 
 #define INF 9999999
 
-void primsAlgorithm(FileData *data)
-{
-  // Access the data from the FileData structure
-  int numValues = data->numValues;
-  float *values = data->values;
-
-  // Check if there are enough values for the algorithm
-  if (numValues < 1)
-  {
-    printf("Insufficient values for Prim's Algorithm\n");
-    return;
-  }
-
-  // Calculate the number of vertices based on the number of values
-  int numVertices = (int)values[0];
-
-  // Calculate the number of edges
-  int numEdges = numValues - 1;
-
-  // Check if the number of edges is correct
-  if (numEdges != numVertices * (numVertices - 1) / 2)
-  {
-    printf("Invalid number of edges\n");
-    return;
-  }
-
-  // Create an adjacency matrix to represent the graph
-  int graph[numVertices][numVertices];
-
-  // Fill the adjacency matrix with values from the data array
-  int dataIndex = 1;
-  for (int i = 0; i < numVertices; i++)
-  {
-    for (int j = 0; j < numVertices; j++)
-    {
-      graph[i][j] = (int)values[dataIndex++];
-    }
-  }
-
-  // Perform Prim's Algorithm to find the minimum spanning tree
-  int minCost = primMST(graph, numVertices);
-
-  // Print the minimum cost and the selected edges
-  printf("Minimum Cost: %d\n", minCost);
-  printf("Selected Edges:\n");
-  printMST(graph, numVertices);
-}
-
 int minKey(int key[], bool mstSet[], int numVertices)
 {
   int min = INF, minIndex;
@@ -65,15 +17,6 @@ int minKey(int key[], bool mstSet[], int numVertices)
   }
 
   return minIndex;
-}
-
-void printMST(int graph[][MAX_VERTICES], int numVertices)
-{
-  // Print the selected edges of the minimum spanning tree
-  for (int i = 1; i < numVertices; i++)
-  {
-    printf("%d - %d\n", i, graph[i][parent[i]]);
-  }
 }
 
 int primMST(int graph[][MAX_VERTICES], int numVertices)
@@ -117,4 +60,64 @@ int primMST(int graph[][MAX_VERTICES], int numVertices)
   }
 
   return minCost;
+}
+
+void printMST(int graph[][MAX_VERTICES], int parent[], int numVertices)
+{
+  // Print the selected edges of the minimum spanning tree
+  for (int i = 1; i < numVertices; i++)
+  {
+    printf("%d - %d\n", parent[i], i);
+  }
+}
+
+void primsAlgorithm(FileData *data)
+{
+  // Access the data from the FileData structure
+  int numValues = data->numValues;
+  float *values = data->values;
+
+  // Check if there are enough values for the algorithm
+  if (numValues < 1)
+  {
+    printf("Insufficient values for Prim's Algorithm\n");
+    return;
+  }
+
+  // Calculate the number of vertices based on the number of values
+  int numVertices = (int)values[0];
+
+  // Calculate the number of edges
+  int numEdges = numValues - 1;
+
+  // Check if the number of edges is correct
+  if (numEdges != numVertices * (numVertices - 1) / 2)
+  {
+    printf("Invalid number of edges\n");
+    return;
+  }
+
+  // Create an adjacency matrix to represent the graph
+  int graph[numVertices][numVertices];
+
+  // Fill the adjacency matrix with values from the data array
+  int dataIndex = 1;
+  for (int i = 0; i < numVertices; i++)
+  {
+    for (int j = 0; j < numVertices; j++)
+    {
+      graph[i][j] = (int)values[dataIndex++];
+    }
+  }
+
+  // Create a parent array to store the MST
+  int parent[numVertices];
+
+  // Perform Prim's Algorithm to find the minimum spanning tree
+  int minCost = primMST(graph, numVertices);
+
+  // Print the minimum cost and the selected edges
+  printf("Minimum Cost: %d\n", minCost);
+  printf("Selected Edges:\n");
+  printMST(graph, parent, numVertices);
 }

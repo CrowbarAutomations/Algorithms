@@ -6,7 +6,6 @@
 #include <stdlib.h>
 
 // Local Files
-#include "functionMapping.h"
 
 // Structure to hold file data
 typedef struct

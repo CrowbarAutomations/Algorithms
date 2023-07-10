@@ -7,6 +7,7 @@
 #include <string.h>
 
 // Local Files
+#include "fileProcessing.h"
 #include "quickSortAlgorithm.h"
 #include "dijkstrasAlgorithm.h"
 #include "primsAlgorithm.h"
