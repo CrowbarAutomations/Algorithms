@@ -1,4 +1,4 @@
-#include "inc/fileProcessing.h"
+#include "fileProcessing.h"
 
 void processFile(int algorithm, FileData **data, int *fileOpenStatus)
 {

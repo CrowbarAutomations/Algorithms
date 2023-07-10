@@ -1,4 +1,4 @@
-#include "inc/main.h"
+#include "main.h"
 
 int main()
 {

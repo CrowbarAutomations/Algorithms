@@ -5,6 +5,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// Local Files
+#include "fileProcessing.h"
+
 void primsAlgorithm(FileData *data);
 
 #endif /* PRIMS_ALGORITHM_H */
