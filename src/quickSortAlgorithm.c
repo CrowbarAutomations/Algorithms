@@ -1,7 +1,7 @@
 #include "quickSortAlgorithm.h"
 
 // Function to swap two float values
-void swap(float *a, float *b)
+static inline void swap(float *a, float *b)
 {
   float temp = *a;
   *a = *b;
@@ -9,7 +9,7 @@ void swap(float *a, float *b)
 }
 
 // Function to partition the array for Quick Sort
-int partition(float arr[], int low, int high)
+static inline int partition(float arr[], int low, int high)
 {
   // Select the pivot element
   float pivot = arr[high];
@@ -20,9 +20,9 @@ int partition(float arr[], int low, int high)
   // Iterate through the array elements
   for (int j = low; j <= high - 1; j++)
   {
-    // If the current element is smaller than or equal to the pivot,
+    // If the current element is smaller than the pivot,
     // swap arr[i+1] and arr[j]
-    if (arr[j] <= pivot)
+    if (arr[j] < pivot)
     {
       i++;
       swap(&arr[i], &arr[j]);
@@ -37,16 +37,24 @@ int partition(float arr[], int low, int high)
 }
 
 // Recursive function to perform Quick Sort
-void quickSort(float arr[], int low, int high)
+static void quickSortHelper(float arr[], int low, int high)
 {
-  if (low < high)
+  while (low < high)
   {
     // Find the partition index
     int pi = partition(arr, low, high);
 
-    // Recursively call quickSort on the left and right partitions
-    quickSort(arr, low, pi - 1);
-    quickSort(arr, pi + 1, high);
+    // Optimize recursion by sorting the smaller partition first
+    if (pi - low < high - pi)
+    {
+      quickSortHelper(arr, low, pi - 1);
+      low = pi + 1;
+    }
+    else
+    {
+      quickSortHelper(arr, pi + 1, high);
+      high = pi - 1;
+    }
   }
 }
 
@@ -58,7 +66,7 @@ void quickSortAlgorithm(FileData *data)
   float *values = data->values;
 
   // Apply Quick Sort algorithm to the values array
-  quickSort(values, 0, numValues - 1);
+  quickSortHelper(values, 0, numValues - 1);
 
   // Print the sorted values
   printf("Sorted Values: ");

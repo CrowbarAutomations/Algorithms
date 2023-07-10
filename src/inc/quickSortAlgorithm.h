@@ -9,13 +9,13 @@
 #include "fileProcessing.h"
 
 // Function to swap two float values
-void swap(float *a, float *b);
+static inline void swap(float *a, float *b);
 
 // Function to partition the array for Quick Sort
-int partition(float arr[], int low, int high);
+static inline int partition(float arr[], int low, int high);
 
 // Recursive function to perform Quick Sort
-void quickSort(float arr[], int low, int high);
+static void quickSortHelper(float arr[], int low, int high);
 
 // Quick Sort algorithm function
 void quickSortAlgorithm(FileData *data);
