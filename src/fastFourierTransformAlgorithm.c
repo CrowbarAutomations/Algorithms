@@ -1,9 +1,47 @@
 #include "inc/fastFourierTransformAlgorithm.h"
 
+// Function to multiply two complex numbers
+ComplexNumber complexMultiply(ComplexNumber a, ComplexNumber b)
+{
+  ComplexNumber result;
+  result.real = a.real * b.real - a.imaginary * b.imaginary;
+  result.imaginary = a.real * b.imaginary + a.imaginary * b.real;
+  return result;
+}
+
+// Function to add two complex numbers
+ComplexNumber complexAdd(ComplexNumber a, ComplexNumber b)
+{
+  ComplexNumber result;
+  result.real = a.real + b.real;
+  result.imaginary = a.imaginary + b.imaginary;
+  return result;
+}
+
+// Function to subtract two complex numbers
+ComplexNumber complexSubtract(ComplexNumber a, ComplexNumber b)
+{
+  ComplexNumber result;
+  result.real = a.real - b.real;
+  result.imaginary = a.imaginary - b.imaginary;
+  return result;
+}
+
+// Function to create a complex number from real and imaginary parts
+ComplexNumber createComplexNumber(double real, double imaginary)
+{
+  ComplexNumber result;
+  result.real = real;
+  result.imaginary = imaginary;
+  return result;
+}
+
+// Recursive function to compute Fast Fourier Transform (FFT)
 void recursiveFFT(ComplexNumber data[], int n, int isInverse)
 {
   if (n <= 1)
   {
+    // Base case: If the size is 1 or less, no further computation is needed
     return;
   }
 
@@ -35,6 +73,7 @@ void recursiveFFT(ComplexNumber data[], int n, int isInverse)
   }
 }
 
+// Function to perform the Fast Fourier Transform (FFT) algorithm
 void fastFourierTransformAlgorithm(FileData *data)
 {
   // Access the data from the FileData structure
