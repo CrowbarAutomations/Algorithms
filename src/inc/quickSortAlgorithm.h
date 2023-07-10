@@ -5,6 +5,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void quickSortAlgorithm();
+void quickSortAlgorithm(FileData *data);
 
 #endif /* QUICKSORT_ALGORITHM_H */

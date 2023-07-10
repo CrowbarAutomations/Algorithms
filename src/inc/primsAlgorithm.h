@@ -5,6 +5,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void primsAlgorithm();
+void primsAlgorithm(FileData *data);
 
 #endif /* PRIMS_ALGORITHM_H */

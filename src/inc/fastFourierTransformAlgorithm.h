@@ -5,6 +5,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void fastFourierTransformAlgorithm();
+void fastFourierTransformAlgorithm(FileData *data);
 
 #endif /* FASTFOURIERTRANSFORM_ALGORITHM_H */

@@ -5,6 +5,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void dijkstrasAlgorithm();
+void dijkstrasAlgorithm(FileData *data);
 
 #endif /* DIJKSTRAS_ALGORITHM_H */

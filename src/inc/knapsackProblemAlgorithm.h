@@ -5,6 +5,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void knapsackProblemAlgorithm();
+void knapsackProblemAlgorithm(FileData *data);
 
 #endif /* KNAPSACKPROBLEM_ALGORITHM_H */
