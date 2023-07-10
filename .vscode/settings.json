@@ -19,5 +19,15 @@
     "editor.defaultFormatter": "ms-python.black-formatter"
   },
   "python.formatting.provider": "none",
-  "C_Cpp.errorSquiggles": "disabled"
+  "C_Cpp.errorSquiggles": "disabled",
+  "files.associations": {
+    "dijkstrasalgorithm.h": "c",
+    "fastfouriertransformalgorithm.h": "c",
+    "fileprocessing.h": "c",
+    "functionmapping.h": "c",
+    "knapsackproblemalgorithm.h": "c",
+    "main.h": "c",
+    "primsalgorithm.h": "c",
+    "quicksortalgorithm.h": "c"
+  }
 }

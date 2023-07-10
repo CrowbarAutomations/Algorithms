@@ -1,4 +1,4 @@
-#include "quickSortAlgorithm.h"
+#include "inc/quickSortAlgorithm.h"
 
 // Function to swap two float values
 static inline void swap(float *a, float *b)

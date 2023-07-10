@@ -1,4 +1,4 @@
-#include "primsAlgorithm.h"
+#include "inc/primsAlgorithm.h"
 
 #define INF 9999999
 

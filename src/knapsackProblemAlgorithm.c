@@ -1,4 +1,4 @@
-#include "knapsackProblemAlgorithm.h"
+#include "inc/knapsackProblemAlgorithm.h"
 
 int max(int a, int b)
 {

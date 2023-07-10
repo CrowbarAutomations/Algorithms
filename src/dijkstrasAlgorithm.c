@@ -1,4 +1,4 @@
-#include "dijkstrasAlgorithm.h"
+#include "inc/dijkstrasAlgorithm.h"
 
 // Function to create the adjacency matrix from the data array
 void createAdjacencyMatrix(float values[], int numVertices, int adjacencyMatrix[][MAX_VERTICES])

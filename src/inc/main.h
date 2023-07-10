@@ -9,6 +9,11 @@
 // Local Files
 #include "fileProcessing.h"
 #include "functionMapping.h"
+#include "quickSortAlgorithm.h"
+#include "dijkstrasAlgorithm.h"
+#include "primsAlgorithm.h"
+#include "knapsackProblemAlgorithm.h"
+#include "fastFourierTransformAlgorithm.h"
 
 // Function prototype for main
 int main();

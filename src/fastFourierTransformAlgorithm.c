@@ -1,4 +1,4 @@
-#include "fastFourierTransformAlgorithm.h"
+#include "inc/fastFourierTransformAlgorithm.h"
 
 void recursiveFFT(ComplexNumber data[], int n, int isInverse)
 {

@@ -1,4 +1,4 @@
-#include "functionMapping.h"
+#include "inc/functionMapping.h"
 
 // Hash table size
 #define FUNCTION_TABLE_SIZE 5
