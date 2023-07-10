@@ -41,7 +41,7 @@ void initializeFunctionTable()
 }
 
 // Execute the function based on user input
-void executeAlgorithm(int input)
+void executeAlgorithm(int input, FileData *data)
 {
     // Calculate the hash index
     unsigned int index = hash(input);
@@ -50,7 +50,7 @@ void executeAlgorithm(int input)
     if (functionTable[index].input == input)
     {
         // Execute the corresponding algorithm function
-        functionTable[index].function();
+        functionTable[index].function(data);
     }
     else
     {

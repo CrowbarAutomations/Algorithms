@@ -1,15 +1,17 @@
 #ifndef FUNCTION_MAPPING_H
 #define FUNCTION_MAPPING_H
 
+// Libraries
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+// Local Files
 #include "quickSortAlgorithm.h"
 #include "dijkstrasAlgorithm.h"
 #include "primsAlgorithm.h"
 #include "knapsackProblemAlgorithm.h"
 #include "fastFourierTransformAlgorithm.h"
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 // Define the function pointer type for algorithm functions
 typedef void (*FunctionPointer)();
@@ -23,8 +25,8 @@ typedef struct
 } HashEntry;
 
 // Function prototypes
-void initializeFunctionTable();         // Initialize the hash table with algorithm mappings
-void executeAlgorithm(int input);       // Execute the function based on user input
-const char *getFunctionName(int input); // Get the function name based on user input
+void initializeFunctionTable();                   // Initialize the hash table with algorithm mappings
+void executeAlgorithm(int input, FileData *data); // Execute the function based on user input
+const char *getFunctionName(int input);           // Get the function name based on user input
 
 #endif /* FUNCTION_MAPPING_H */

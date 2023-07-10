@@ -1,9 +1,12 @@
 #ifndef FILE_PROCESSING_H
 #define FILE_PROCESSING_H
 
-#include "functionMapping.h"
+// Libraries
 #include <stdio.h>
 #include <stdlib.h>
+
+// Local Files
+#include "functionMapping.h"
 
 // Structure to hold file data
 typedef struct
