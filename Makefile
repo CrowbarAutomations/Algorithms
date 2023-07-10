@@ -36,7 +36,7 @@ $(TARGET): $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
 
 # Rule to compile each individual source file into an object file
-$(BUILD_DIR)/%.o: $(SRC_DIR)/%.c $(INC_DIR)/*.h
+$(BUILD_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(BUILD_DIR)  # Create the build directory if it doesn't exist
 	$(CC) $(CFLAGS) -I$(INC_DIR) -c -o $@ $<
 
